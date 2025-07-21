@@ -123,6 +123,18 @@ export default function Dashboard() {
 
       <section className="">
         <div className="container flex flex-row justify-between mx-auto px-4 py-12">
+          <div className="flex flex-col max-w-4xl items-start space-y-6">
+            <div className="flex items-start space-x-3 mb-4">
+              <h1 className="text-4xl font-bold text-black">
+                Monitoramento PIX
+              </h1>
+              <PixIcon size={48} className="text-black"/>
+            </div>
+            <p className="flex items-center justify-start text-xl text-muted-foreground max-w-2xl text-start">
+              Gerencie pagamentos Chave PIX e dinâmicos com facilidade.
+              Monitore transações em tempo real e tenha controle total sobre seus recebimentos.
+            </p>
+          </div>
           <Image
             alt="Logo"
             src="/images/logo.png"
@@ -130,18 +142,6 @@ export default function Dashboard() {
             height={803}
             className="w-auto h-32"
           />
-          <div className="flex flex-col max-w-4xl items-end space-y-6">
-            <div className="flex items-end space-x-3 mb-4">
-              <h1 className="text-4xl font-bold text-black">
-                Monitoramento PIX
-              </h1>
-              <PixIcon size={48} className="text-black"/>
-            </div>
-            <p className="flex items-center justify-end text-xl text-muted-foreground max-w-2xl text-end">
-              Gerencie pagamentos Chave PIX e dinâmicos com facilidade.
-              Monitore transações em tempo real e tenha controle total sobre seus recebimentos.
-            </p>
-          </div>
         </div>
       </section>
 
