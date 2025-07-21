@@ -30,32 +30,6 @@ export interface Address {
   zipCode: string;
 }
 
-export interface Proposal {
-  id: string;
-  title: string;
-  description: string;
-  clientId: string;
-  client?: Client;
-  authorId: string;
-  author?: User;
-  status: ProposalStatus;
-  value: number;
-  paymentMethod: PaymentMethod;
-  pixData?: PIXData;
-  attachments: Attachment[];
-  timeline: TimelineEvent[];
-  validUntil: Date;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export type ProposalStatus = 
-  | 'draft' 
-  | 'sent' 
-  | 'pending' 
-  | 'approved' 
-  | 'rejected' 
-  | 'expired';
 
 export type PaymentMethod = 'pix' | 'boleto' | 'card' | 'transfer';
 
@@ -88,9 +62,6 @@ export interface TimelineEvent {
 }
 
 export interface Dashboard {
-  totalProposals: number;
-  pendingProposals: number;
-  approvedProposals: number;
   totalValue: number;
   monthlyGrowth: number;
   recentActivity: TimelineEvent[];
@@ -100,7 +71,6 @@ export interface Dashboard {
 
 export interface ClientStats {
   client: Client;
-  proposalCount: number;
   totalValue: number;
   approvalRate: number;
 }
@@ -139,7 +109,6 @@ export interface PaginatedResponse<T> extends APIResponse<T[]> {
 }
 
 export interface FilterOptions {
-  status?: ProposalStatus[];
   paymentMethod?: PaymentMethod[];
   dateRange?: {
     start: Date;
@@ -207,17 +176,6 @@ export interface SelectProps extends BaseComponentProps {
 }
 
 // Form Types
-export interface ProposalFormData {
-  title: string;
-  description: string;
-  clientId: string;
-  value: number;
-  paymentMethod: PaymentMethod;
-  pixData?: Partial<PIXData>;
-  validUntil: Date;
-  attachments: File[];
-}
-
 export interface ClientFormData {
   name: string;
   email: string;
@@ -242,14 +200,6 @@ export interface UseLocalStorageReturn<T> {
   removeValue: () => void;
 }
 
-// Theme Types
-export type Theme = 'light' | 'dark' | 'system';
-
-export interface ThemeContextValue {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-  systemTheme: 'light' | 'dark';
-}
 
 // Error Types
 export class AppError extends Error {
@@ -279,15 +229,7 @@ export class NetworkError extends AppError {
 
 // Event Types
 export interface CustomEventMap {
-  'proposal:created': CustomEvent<{ proposal: Proposal }>;
-  'proposal:updated': CustomEvent<{ proposal: Proposal }>;
-  'proposal:status-changed': CustomEvent<{ 
-    proposalId: string; 
-    oldStatus: ProposalStatus; 
-    newStatus: ProposalStatus; 
-  }>;
   'notification:new': CustomEvent<{ notification: Notification }>;
-  'theme:changed': CustomEvent<{ theme: Theme }>;
 }
 
 // Configuration Types
@@ -299,13 +241,11 @@ export interface AppConfig {
   features: {
     notifications: boolean;
     analytics: boolean;
-    darkMode: boolean;
     offlineMode: boolean;
   };
   limits: {
     maxFileSize: number;
     maxAttachments: number;
-    proposalValidDays: number;
   };
   pix: {
     maxValue: number;

@@ -2,19 +2,17 @@ import type { AppConfig } from '@/types';
 
 export const appConfig: AppConfig = {
   apiUrl: process.env.NEXT_PUBLIC_API_URL || '/api',
-  appName: 'PIX Proposals',
+  appName: 'PIX | Prefeitura de Tupaciguara',
   version: '1.0.0',
   environment: (process.env.NODE_ENV as any) || 'development',
   features: {
     notifications: true,
     analytics: true,
-    darkMode: true,
     offlineMode: false,
   },
   limits: {
     maxFileSize: 10 * 1024 * 1024, // 10MB
     maxAttachments: 5,
-    proposalValidDays: 30,
   },
   pix: {
     maxValue: 1000000, // R$ 1M
@@ -26,9 +24,6 @@ export const appConfig: AppConfig = {
 export const routes = {
   home: '/',
   dashboard: '/dashboard',
-  proposals: '/proposals',
-  proposal: (id: string) => `/proposals/${id}`,
-  newProposal: '/proposals/new',
   clients: '/clients',
   client: (id: string) => `/clients/${id}`,
   newClient: '/clients/new',

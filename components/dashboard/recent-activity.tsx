@@ -9,7 +9,7 @@ import {
   Eye, 
   CheckCircle, 
   XCircle, 
-  CreditCard,
+  Copy,
   MessageSquare 
 } from 'lucide-react';
 import type { TimelineEvent } from '@/types';
@@ -24,7 +24,7 @@ const eventIcons = {
   viewed: Eye,
   approved: CheckCircle,
   rejected: XCircle,
-  payment: CreditCard,
+  payment: Copy,
   note: MessageSquare,
 };
 
@@ -35,7 +35,7 @@ const eventColors = {
   approved: 'text-green-600 bg-green-50 border-green-200',
   rejected: 'text-red-600 bg-red-50 border-red-200',
   payment: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-  note: 'text-yellow-600 bg-yellow-50 border-yellow-200',
+  note: 'text-amber-600 bg-amber-50 border-amber-200',
 };
 
 export function RecentActivity({ activities }: RecentActivityProps) {
