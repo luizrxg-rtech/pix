@@ -1,10 +1,10 @@
 import './globals.css';
 import type {Metadata} from 'next';
-import {Outfit, Roboto_Mono} from 'next/font/google';
+import {Sora, Roboto_Mono} from 'next/font/google';
 import {cn} from '@/lib/utils';
 import {Toaster} from '@/components/ui/sonner';
 
-const sans = Outfit({
+const sans = Sora({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',

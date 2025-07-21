@@ -60,9 +60,9 @@ const getStatusLabel = (status: string) => {
     case 'ok':
       return 'Efetuado';
     case 'error':
-      return 'Erro';
+      return 'Falhou';
     default:
-      return 'Erro';
+      return 'Falhou';
   }
 };
 

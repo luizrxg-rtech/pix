@@ -119,7 +119,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header/>
 
       <section className="">
         <div className="container flex flex-row justify-between mx-auto px-4 py-12">
@@ -135,7 +135,7 @@ export default function Dashboard() {
               <h1 className="text-4xl font-bold text-black">
                 Monitoramento PIX
               </h1>
-              <PixIcon size={48} className="text-black" />
+              <PixIcon size={48} className="text-black"/>
             </div>
             <p className="flex items-center justify-end text-xl text-muted-foreground max-w-2xl text-end">
               Gerencie pagamentos Chave PIX e dinâmicos com facilidade.
@@ -154,7 +154,7 @@ export default function Dashboard() {
                   <p className="text-2xl font-bold">{pixDashboard.totalTransactions}</p>
                   <p className="text-sm text-muted-foreground">Total de Transações</p>
                 </div>
-                <ArrowRightLeft className="h-8 w-8 text-blue-500" />
+                <ArrowRightLeft className="h-8 w-8 text-blue-500"/>
               </div>
             </CardContent>
           </Card>
@@ -168,7 +168,7 @@ export default function Dashboard() {
                   </p>
                   <p className="text-sm text-muted-foreground">Volume Total</p>
                 </div>
-                <DollarSign className="h-8 w-8 text-green-500" />
+                <DollarSign className="h-8 w-8 text-green-500"/>
               </div>
             </CardContent>
           </Card>
@@ -180,7 +180,7 @@ export default function Dashboard() {
                   <p className="text-2xl font-bold">{pixDashboard.failedTransactions}</p>
                   <p className="text-sm text-muted-foreground">Erros</p>
                 </div>
-                <AlertCircle className="h-8 w-8 text-red-500" />
+                <AlertCircle className="h-8 w-8 text-red-500"/>
               </div>
             </CardContent>
           </Card>
@@ -194,27 +194,26 @@ export default function Dashboard() {
                   </p>
                   <p className="text-sm text-muted-foreground">Transações hoje</p>
                 </div>
-                <Clock className="h-8 w-8 text-purple-500" />
+                <Clock className="h-8 w-8 text-purple-500"/>
               </div>
             </CardContent>
           </Card>
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold tracking-tight">
+          <Card className="lg:col-span-2">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <CardTitle className="text-2xl font-bold tracking-tight">
                 Transações Recentes
-              </h2>
+              </CardTitle>
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" size="sm" onClick={handleViewAll}>
                   Ver todas
-                  <ArrowRight className="h-4 w-4 ml-2" />
+                  <ArrowRight className="h-4 w-4 ml-2"/>
                 </Button>
               </div>
-            </div>
-            
-            <Card className="p-4">
+            </CardHeader>
+            <CardContent className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
                   <label className="text-sm font-medium mb-2 block">Status</label>
@@ -242,15 +241,14 @@ export default function Dashboard() {
                   </select>
                 </div>
               </div>
-            </Card>
 
-            <div className="space-y-4">
-              {filteredTransactions.map((transaction) => (
-                <Card key={transaction.id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
+              <div className="space-y-3">
+                {filteredTransactions.map((transaction) => (
+                  <div key={transaction.id} className="hover:shadow-md transition-shadow border-b pb-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className={cn(getTypeColor(transaction.type), "h-10 w-10 rounded-lg flex items-center justify-center")}>
+                        <div
+                          className={cn(getTypeColor(transaction.type), "h-10 w-10 rounded-lg flex items-center justify-center")}>
                           {transaction.type === 'static' ? (
                             <Key className="h-5 w-5 text-inherit"/>
                           ) : (
@@ -273,17 +271,17 @@ export default function Dashboard() {
                         </Badge>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
           <div className="space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Key className="h-5 w-5" />
+                  <Key className="h-5 w-5"/>
                   <span>Chave PIX</span>
                 </CardTitle>
               </CardHeader>
@@ -302,7 +300,7 @@ export default function Dashboard() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Copy className="h-5 w-5" />
+                  <Copy className="h-5 w-5"/>
                   <span>PIX Copia e Cola</span>
                 </CardTitle>
               </CardHeader>
