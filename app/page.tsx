@@ -242,9 +242,15 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="space-y-3">
-                {filteredTransactions.map((transaction) => (
-                  <div key={transaction.id} className="transition-shadow border-b pb-3">
+              <div>
+                {filteredTransactions.map((transaction, index) => (
+                  <div
+                    key={transaction.id}
+                    className={cn(
+                      filteredTransactions.length - 1 !== index && "border-b",
+                      "py-3"
+                    )}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div
