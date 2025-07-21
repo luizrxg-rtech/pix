@@ -1,9 +1,8 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import { Outfit, Roboto_Mono } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/providers/theme-provider';
-import { Toaster } from '@/components/ui/sonner';
+import type {Metadata} from 'next';
+import {Outfit, Roboto_Mono} from 'next/font/google';
+import {cn} from '@/lib/utils';
+import {Toaster} from '@/components/ui/sonner';
 
 const sans = Outfit({
   subsets: ['latin'],
@@ -53,19 +52,12 @@ export default function RootLayout({
         sans.variable,
         mono.variable
       )}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <main className="flex-1">
-              {children}
-            </main>
-          </div>
-          <Toaster position="top-right" />
-        </ThemeProvider>
+        <div className="relative flex min-h-screen flex-col">
+          <main className="flex-1">
+            {children}
+          </main>
+        </div>
+        <Toaster position="top-right" />
       </body>
     </html>
   );

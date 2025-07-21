@@ -135,7 +135,7 @@ export function getStatusColor(status: string): string {
 export function parseSearchParams(searchParams: URLSearchParams) {
   const params: Record<string, string | string[]> = {};
   
-  for (const [key, value] of searchParams.entries()) {
+  Array.from(searchParams.entries()).forEach(([key, value]) => {
     if (params[key]) {
       if (Array.isArray(params[key])) {
         (params[key] as string[]).push(value);
@@ -145,7 +145,7 @@ export function parseSearchParams(searchParams: URLSearchParams) {
     } else {
       params[key] = value;
     }
-  }
+  });
   
   return params;
 }

@@ -140,7 +140,7 @@ export interface BaseComponentProps {
 
 export interface ButtonProps extends BaseComponentProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'icon';
   disabled?: boolean;
   loading?: boolean;
   onClick?: () => void;
