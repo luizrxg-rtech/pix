@@ -256,8 +256,6 @@ export default function TransactionsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="container mx-auto px-4 py-8 space-y-8">
         {/* Stats Cards */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -328,7 +326,7 @@ export default function TransactionsPage() {
                   <select
                     value={statusFilter}
                     onChange={(e) => setStatusFilter(e.target.value)}
-                    className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                    
                   >
                     <option value="all">Todos os status</option>
                     <option value="completed">Concluídas</option>
@@ -339,7 +337,7 @@ export default function TransactionsPage() {
                   <select
                     value={typeFilter}
                     onChange={(e) => setTypeFilter(e.target.value)}
-                    className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                    
                   >
                     <option value="all">Todos os tipos</option>
                     <option value="static">Chave PIX</option>
@@ -349,7 +347,7 @@ export default function TransactionsPage() {
                   <select
                     value={dateFilter}
                     onChange={(e) => setDateFilter(e.target.value)}
-                    className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                    
                   >
                     <option value="all">Todas as datas</option>
                     <option value="today">Hoje</option>

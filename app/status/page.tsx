@@ -231,7 +231,6 @@ export default function StatusPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
 
       <main className="grid lg:grid-cols-3 container mx-auto px-4 py-8 space-x-8">
         {/* Bank APIs Status */}
@@ -348,7 +347,7 @@ export default function StatusPage() {
                 <select
                   value={levelFilter}
                   onChange={(e) => setLevelFilter(e.target.value)}
-                  className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                  
                 >
                   <option value="all">Todos os níveis</option>
                   <option value="info">Info</option>
@@ -357,7 +356,7 @@ export default function StatusPage() {
                 <select
                   value={bankFilter}
                   onChange={(e) => setBankFilter(e.target.value)}
-                  className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                  
                 >
                   <option value="all">Todos os bancos</option>
                   {bankApis.map(bank => (

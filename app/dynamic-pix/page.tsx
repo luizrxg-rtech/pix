@@ -130,7 +130,6 @@ export default function DynamicPixPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main className="container mx-auto px-4 py-8 space-y-8">
         {/* Stats Cards */}
         <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -208,7 +207,7 @@ export default function DynamicPixPage() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-3 py-2 border border-input rounded-md bg-background text-sm"
+                
               >
                 <option value="all">Todos os status</option>
                 <option value="paid">Pagos</option>

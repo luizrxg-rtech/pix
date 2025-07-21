@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import {Sora, Roboto_Mono} from 'next/font/google';
 import {cn} from '@/lib/utils';
 import {Toaster} from '@/components/ui/sonner';
+import {Header} from '@/components/layout/header';
 
 const sans = Sora({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
       )}>
         <div className="relative flex min-h-screen flex-col">
           <main className="flex-1">
+            <Header />
             {children}
           </main>
         </div>

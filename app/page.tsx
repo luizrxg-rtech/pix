@@ -119,8 +119,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header/>
-
       <section className="">
         <div className="container flex flex-row justify-between mx-auto px-4 py-12">
           <div className="flex flex-col max-w-4xl items-start space-y-6">
@@ -220,7 +218,7 @@ export default function Dashboard() {
                   <select
                     value={statusFilter}
                     onChange={(e) => setStatusFilter(e.target.value)}
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-sm"
+                    className="w-full"
                   >
                     <option value="all">Todos os status</option>
                     <option value="completed">Concluídas</option>
@@ -233,7 +231,7 @@ export default function Dashboard() {
                   <select
                     value={typeFilter}
                     onChange={(e) => setTypeFilter(e.target.value)}
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-sm"
+                    className="w-full"
                   >
                     <option value="all">Todos os tipos</option>
                     <option value="static">Chave PIX</option>
