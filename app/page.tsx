@@ -244,7 +244,7 @@ export default function Dashboard() {
 
               <div className="space-y-3">
                 {filteredTransactions.map((transaction) => (
-                  <div key={transaction.id} className="hover:shadow-md transition-shadow border-b pb-3">
+                  <div key={transaction.id} className="transition-shadow border-b pb-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div
